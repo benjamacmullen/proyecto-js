@@ -1,0 +1,456 @@
+/*/ index*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: none; }
+  
+  .divLogo {
+    text-align: center; }
+  
+  .logo {
+    width: 10%;
+    height: 10%;
+    animation-name: aparecer;
+    animation-duration: 3s; }
+  
+  .divbotonC {
+    background-color: #cc9c64; }
+  
+  @keyframes aparecer {
+    0% {
+      opacity: 0; }
+    100% {
+      opacity: 1; } }
+  
+  .divboton {
+    text-align: right;
+    margin: 10px;
+    background-color: #cc9c64; }
+  
+  .divbotonC {
+    text-align: right; }
+  
+  .botonimg {
+    width: 30px;
+    height: 30px; }
+  
+  .boton:hover {
+    background-color: rgba(128, 128, 128, 0.923); }
+  
+  .btnAgregar {
+    border: 0;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 10px; }
+  
+  .btnAgregar:hover {
+    background-color: rgba(0, 81, 255, 0.323); }
+  
+  .nav {
+    width: 100%;
+    margin: 0;
+    height: 80px;
+    background-color: #cc9c64;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    grid-area: nav; }
+  
+  .nav ul {
+    list-style: none;
+    padding-left: 3px;
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center; }
+  
+  .nav ul li {
+    display: inline-block;
+    margin-top: 10px;
+    position: relative; }
+  
+  .nav ul li ul {
+    display: none; }
+  
+  .nav ul li:hover ul {
+    display: block;
+    position: absolute;
+    background-color: #cc9c64; }
+  
+  .mainIndex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px; }
+  
+  .containerIndex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    position: relative;
+    gap: 30px;
+    justify-content: center;
+    padding: 15px; }
+  
+  .containerIndex img {
+    width: 100%;
+    object-fit: contain;
+    height: 300px;
+    border-radius: 10px 10px 0 0; }
+  
+  .containerIndex div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    margin-top: 10px;
+    background-color: #e4c4a3;
+    border-radius: 10px; }
+  
+  .carrusel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    gap: 10px;
+    justify-content: center; }
+  
+  .indexH {
+    width: 100%;
+    text-align: center; }
+  
+  /* Tipos de tipografia usados en la web*/
+  .tipografiaMacWeb {
+    font-style: italic;
+    margin: 5px; }
+  
+  /* footer */
+  .foo {
+    margin: 60px;
+    background-color: #e4dccc; }
+  
+  .loginsta {
+    width: 50px;
+    height: 50px; }
+  
+  .logface {
+    width: 50px;
+    height: 50px; }
+  
+  .logyoutube {
+    width: 50px;
+    height: 50px; }
+  
+  .logmsj {
+    width: 25px;
+    height: 25px; }
+  
+  .logubi {
+    width: 25px;
+    height: 25px; }
+  
+  /*/ Productos /*/
+  .mainProductos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+  
+  .containerProductos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    gap: 10px;
+    justify-content: center; }
+  
+  .containerProductos img {
+    width: 100%;
+    object-fit: contain;
+    height: 300px;
+    border-radius: 10px 10px 0 0; }
+  
+  .containerProductos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    margin-top: 10px;
+    background-color: #e4c4a3;
+    border-radius: 10px; }
+  
+  .btnAgregar {
+    border: 0;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 10px; }
+  
+  .btnAgregar:hover {
+    background-color: rgba(0, 81, 255, 0.323); }
+  
+  .precio {
+    font-size: 30px; }
+  
+  /*/ Contacto /*/
+  .formContainer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center; }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px; }
+  
+  .Field {
+    width: 100%;
+    height: 100px; }
+  
+  .containerCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; }
+  
+  .imgUbi {
+    width: 800PX;
+    height: 600px; }
+  
+  .ubiH {
+    text-align: center;
+    font-style: italic;
+    margin: 5px; }
+  
+  /*/ Videos /*/
+  .mainVid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px; }
+  
+  .containerVid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    position: relative;
+    gap: 30px;
+    justify-content: center;
+    padding: 15px; }
+  
+  .containerVid iframe {
+    width: 100%;
+    object-fit: contain;
+    height: 300px;
+    border-radius: 10px 10px 0 0; }
+  
+  .containerVid div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    margin-top: 10px;
+    background-color: #e4c4a3;
+    border-radius: 10px; }
+  
+  .containerGrande {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    gap: 10px;
+    justify-content: center; }
+  
+  .containerGrande iframe {
+    width: 100%;
+    object-fit: contain;
+    height: 300px;
+    border-radius: 10px 10px 10px 10px; }
+  
+  .containerGrande div {
+    text-align: center; }
+  
+  /*/mediaIndex/*/
+  @media (max-width: 567px) {
+    .container {
+      grid-template-rows: 20% 100px auto auto; }
+    .divLogo {
+      text-align: center; }
+    .logo {
+      width: 20%;
+      height: 20%; }
+    .divboton {
+      text-align: center; }
+    .divbotonC {
+      text-align: center; }
+    .botonimg {
+      width: 10px;
+      height: 10px; }
+    .nav {
+      height: 80px; }
+    .destacados {
+      text-align: center; }
+    .destacadosPrimeraLinea {
+      width: 25%;
+      height: 25%; }
+    .destacadosSegundaLinea {
+      width: 25%;
+      height: 25%; }
+    /* Tipos de tipografia usados en la web*/
+    .tipografiaMacWeb {
+      font-size: 0%; }
+    /*carrusel de fotos*/
+    .slide-inner {
+      height: calc(45px + 3em); }
+    /*footer/*/
+    .loginsta {
+      width: 20px;
+      height: 20px; }
+    .logface {
+      width: 20px;
+      height: 20px; }
+    .logyoutube {
+      width: 20px;
+      height: 20px; }
+    .logmsj {
+      width: 10px;
+      height: 10px; }
+    .logubi {
+      width: 10px;
+      height: 10px; } }
+  
+  @media (min-width: 568px) and (max-width: 990px) {
+    .container {
+      grid-template-rows: 20% 100px auto auto; }
+    .divLogo {
+      text-align: center; }
+    .logo {
+      width: 20%;
+      height: 20%; }
+    .divboton {
+      text-align: center; }
+    .divbotonC {
+      text-align: center; }
+    .botonimg {
+      width: 10px;
+      height: 10px; }
+    .nav {
+      height: 80px; }
+    .nav input {
+      display: none; }
+    .nav label {
+      display: none; }
+    .destacados {
+      text-align: center; }
+    .destacadosPrimeraLinea {
+      width: 25%;
+      height: 25%; }
+    .destacadosSegundaLinea {
+      width: 25%;
+      height: 25%; }
+    /* Tipos de tipografia usados en la web*/
+    .tipografiaMacWeb {
+      font-size: 0%; } }
+  
+  @media (min-width: 991px) {
+    .logo {
+      width: 10%;
+      height: 10%; }
+    .nav input {
+      display: none; }
+    .nav label {
+      display: none; } }
+  
+  @media (max-width: 567px) {
+    .container {
+      grid-template-rows: 20% 100px auto auto; }
+    .logo {
+      width: 20%;
+      height: 20%; }
+    .divboton {
+      text-align: center; }
+    .divbotonC {
+      text-align: center; }
+    .botonimg {
+      width: 10px;
+      height: 10px; }
+    .nav {
+      height: 60px; }
+    .Field {
+      height: 200px;
+      font-size: calc(1rem+1vw); }
+    .imgUbi {
+      width: 400px;
+      height: 300px; }
+    .loginsta {
+      width: 20px;
+      height: 20px; }
+    .logface {
+      width: 20px;
+      height: 20px; }
+    .logyoutube {
+      width: 20px;
+      height: 20px; }
+    .logmsj {
+      width: 10px;
+      height: 10px; }
+    .logubi {
+      width: 10px;
+      height: 10px; } }
+  
+  /*//*team/*/
+  .DivTeam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+  
+  .containerTeam {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    gap: 10px;
+    justify-content: space-around;
+    text-align: center;
+    padding: 20px; }
+  
+  .containerTeam img {
+    width: 100%;
+    object-fit: contain;
+    height: 300px;
+    border-radius: 10px 10px 0 0; }
+  
+  .containerTeam div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    margin-top: 10px;
+    background-color: #e4c4a3;
+    border-radius: 10px; }
+  
+  .teamH {
+    width: 100%;
+    padding: 30px; }

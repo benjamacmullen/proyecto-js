@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Macskateshop</title>
+    <meta name="description" content="Desde 1999, un skateshop 100% uruguayo. Mira nutra web yo por vos">
+    <meta name="keywords" content="Tablas, Maple, Guatambu, Trucks, Ruedas ">
+</head>
+
+<body class="container">
+    <header>
+        <div class="divboton">
+            <button class="btnAgregar">Crear Cuenta</button>
+            <button class="btnAgregar">Iniciar sesion</button>
+        </div>
+        <div class="divLogo">
+            <a href="../index.html"><img
+                    src="https://yt3.ggpht.com/ytc/AKedOLQtmSo8SNNpRdeYtPfmJkjzgpw-JJbQckMrrj-u=s900-c-k-c0x00ffffff-no-rj"
+                    alt="" class="logo">
+        </div>
+        <div class="divbotonC">
+            <button class="btnAgregar"> <img src="../assets/img/images.png" alt="" class="botonimg"> Mi carrito</button>
+        </div>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="contacto.html"><button class="btnAgregar">Contacto</button></a></li>
+            <li><a href="productos.html"><button class="btnAgregar">Productos</button>
+                    <ul>
+                        <li><button class="btnAgregar">Tablas</button></li>
+                        <li><button class="btnAgregar">Ruedas</button></li>
+                        <li><button class="btnAgregar">Trucks</button></li>
+                    </ul>
+                </a></li>
+            <li><a href="team.html"><button class="btnAgregar">Team</button></a></li>
+            <li><a href="videos.html"><button class="btnAgregar">Videos</button></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="formContainer">
+
+        
+        <form class="form" action="contacto.php" method="post" >
+            
+                <h2>Datos personales</h2>
+                <input class="input" type="text" name="Nombre" id="Nombre" placeholder="Ingrese su nombre" required>
+                <input class="input" type="text" name="Documento" id="Documento" placeholder="Ingrese su Cedula" required>
+                <input class="input" type="text" name="Mail" id="Mail" placeholder="Ingrse su mail" required>
+                <input class="input" type="text" name="Password" id="Pasword" placeholder="Ingrese su contraseña" required>
+
+                <div>
+                    <label for="sexo">Hombre</label>
+                    <input type="radio" name="sexo" value="h">
+                    <label for="sexo">Mujer</label>
+                    <input type="radio" name="sexo" value="m">
+                    <label for="sexo">Otros</label>
+                    <input type="radio" name="sexo" value="Otros">
+                </div>
+
+                <div>
+                    <label for="Acepto">Acepta terminos y condiciones</label>
+                    <input type="checkbox" name="acepto" value="Si" required>
+                </div>
+
+
+
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Reiniciar">
+
+            
+          
+        </form>
+    </div>
+        <div class="containerCont">
+            <h2 class="ubiH">Ubicacion</h2>
+            <img src="../assets/img/screen.png" alt="" class="imgUbi">
+        </div>
+    </main>
+    <aside>
+
+    </aside>
+    <footer class="foo">
+
+        <h3 class="tipografiaMacWeb1">Nuestras Redes Sociales</h3>
+        <div class="iconoslinea">
+            <img src="../assets/img/icono insta.png" alt="" class="loginsta">
+
+
+            <img src="../assets/img/bien fa.png" alt="" class="logface">
+
+
+            <img src="../assets/img/bien yt.png" alt="" class="logyoutube">
+        </div>
+
+        <h4 class="tipografiaMacWeb1">Contacto</h4>
+        <img src="../assets/img/icono mail.png" alt="" class="logmsj"> Macskateshop@gmail.com
+        <br>
+        <br>
+        <img src="../assets/img/icono ubi.png" alt="" class="logubi"> Plaza Cagancha-Montevideo
+
+    </footer>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="../assets/JS/contacto.js"></script>
+</body>
+
+
+</html>
