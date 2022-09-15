@@ -61,8 +61,8 @@ function listaProductos (){
     let precioTotal = 0;
 
     agregarProductos.forEach(producto => {
-        alert("\n" +producto.nombre+ " precio: " + producto.precio)
-        precioTotal+= producto.precio;
+        alert("\n" + producto.nombre + " precio: " + producto.precio)
+       precioTotal += producto.precio;
     });
     alert("El precio total es:" + precioTotal );
     return VolverAlMenu()
