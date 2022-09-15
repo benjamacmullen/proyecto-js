@@ -3,11 +3,12 @@ class Producto {
     constructor (nombre,precio){
     this.nombre = nombre;
     this.precio = precio;
+    this.imagen = imagen;
 }
 }
 
 let tablas = [
-{ nombre:"Maple-PISCIS", precio: 2500},
+{ nombre:"Maple-PISCIS", precio: 2500 },
 { nombre:"Maple-SAUCE",precio: 2500},
 { nombre: "Maple-BJJ", precio: 2500},
 { nombre: "Guatambu-PISCIS", precio: 2500},
@@ -49,11 +50,12 @@ function venderProductos(productos) {
     productos.forEach(producto => {
         let productoId = prompt ("Desea comprar el producto: \n nombre: "+producto.nombre+" \n precio: "+producto.precio+"  \n Y/N" )
         if (productoId == "Y") {
-            agregarproductos.push(producto);
+            agregarProductos.push(producto);
         }
     });
+    return VolverAlMenu()
 }
-return VolverAlMenu()
+
 
 function listaProductos (){
     let precioTotal = 0;
@@ -62,7 +64,7 @@ function listaProductos (){
         alert("\n" +producto.nombre+ " precio: " + producto.precio)
         precioTotal+= producto.precio;
     });
-    alert('El precio total es: "+ precioTotal" ');
+    alert("El precio total es:" + precioTotal );
     return VolverAlMenu()
 }
 
