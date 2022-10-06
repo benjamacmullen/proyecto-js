@@ -71,6 +71,7 @@ const dibujarCarrito= ()=> {
 */
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const productos = [
         { id: 1, 
@@ -216,3 +217,17 @@ document.addEventListener('DOMContentLoaded', () => {
     dibujarProductos();
     dibujarCarrito();
   });
+
+  const btn = document.querySelector('#myBtn')
+  btn.addEventListener('click', () => {
+  
+      Swal.fire({
+          title: 'Macskateshop',
+          text: 'Somos un skateshop 100% uruguayo con productos de calidad',
+          icon: 'success',
+          confirmButtonText: 'Gracias por formar parte'
+  })
+  })
+  
+  
+
