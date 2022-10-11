@@ -230,4 +230,19 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   
   
+  const lista = document.querySelector("#listado")
 
+  fetch("../data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    data.forEach((producto)=>{
+        const li = document.createElement("li")
+        li.innerHTML=`
+        <h4>${producto.nombre}</h4>
+        <p>${producto.precio}</p>
+
+    
+        `
+        lista.append(li)
+    })
+  })
