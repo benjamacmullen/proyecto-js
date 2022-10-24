@@ -340,8 +340,7 @@
       height: 10px; } }
   
   @media (min-width: 568px) and (max-width: 990px) {
-    .container {
-      grid-template-rows: 20% 100px auto auto; }
+    
     .divLogo {
       text-align: center; }
     .logo {
@@ -382,8 +381,6 @@
       display: none; } }
   
   @media (max-width: 567px) {
-    .container {
-      grid-template-rows: 20% 100px auto auto; }
     .logo {
       width: 20%;
       height: 20%; }
@@ -456,4 +453,68 @@
     width: 100%;
     padding: 30px; }
 
-  
+    
+
+  .menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+  }
+  .menuUl{
+    list-style: none;
+  }
+  .carritoA{
+    width: 3.5rem;
+  }
+  .carritoL{
+    width: 50%;
+  }
+
+
+  aside{
+      background-color: rgb(255, 255, 255);
+      width: 21%;
+      height: 79.9%;
+      bottom: 0px;
+      left: 109%;
+      position:fixed;
+      opacity: 80%;
+    }
+    .carritoAnimation{
+        animation-duration: .8s;
+        animation-name: carritoAnimation;
+        left: 85%;
+    }
+    
+    
+    @keyframes carritoAnimation {
+        from{
+            left: 109%;
+        }
+        to{
+            left: 85%;
+        }
+    }
+    
+    .carritoAnimationSalir{
+        animation-duration: .8s;
+        animation-name: carritoAnimationSalir;
+        left: 109%;
+    }
+    
+    
+    @keyframes carritoAnimationSalir {
+        from{
+            left: 85%;
+        }
+        to{
+            left: 109%;
+        }
+    }
+    
+    .row{
+      display: flex;
+      justify-content: center;
+    }

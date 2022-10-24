@@ -13,25 +13,38 @@
     <meta name="keywords" content="Tablas, Maple, Guatambu, Trucks, Ruedas ">
 </head>
 <body>
+    <div class="menu">
     <button id="myBtn">Nosotros</button>
 
   <h1 class="text-center">Macskateshop</h1>
+  <nav>
+    <ul class="menuUl">
+        <li class="carritoL"><a href="#" id="btnCarrito"><img id="imgCarrito" width="10%" class="carritoA" src="./assets/img/carrito.png" alt=""></a></li>
+    </ul>
+</nav>
+</div>
    <div class="container">
         <div class="row">
-            <main id="items" class="col-sm-8 row"></main>
-            <aside class="col-sm-4">
-                <h2>Carrito</h2>
-                <ul id="carrito" class="list-group"></ul>
-                <hr>
-                <p class="text-right">Total: <span id="total"></span></p>
-                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-            </aside>
+            <main id="items" class="col-sm-8 row">
+            </main>
+            
+            
         </div>
     </div>
-    
+   
     <div id="listado"></div>
           
-            
+    <aside id="listaCarrito">
+       
+        <h4>Agregá productos a tu Carrito!</h4>
+        <hr>
+        <div>
+            <ul id="carrito" class="list-group"></ul>
+            <hr>
+            <p class="text-right">Total: <span id="total"></span></p>
+            <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+        </div>
+    </aside>        
             
             
        

@@ -1,6 +1,3 @@
-
-
-
 /*
 const dibujarProductos = ()=>{
     let contenedor = document.getElementById ("container");
@@ -70,10 +67,9 @@ const dibujarCarrito= ()=> {
 }
 */
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const productos = [
+document.addEventListener("DOMContentLoaded", () => {
+  let misProductos = [
+    /*
         { id: 1, 
         nombre:"Maple-PISCIS", 
         precio: 2500, 
@@ -103,136 +99,189 @@ document.addEventListener('DOMContentLoaded', () => {
         nombre: "Guatambu-BJJ", 
         precio: 2500,
         imagen: "./assets/img/gua bjj.jpeg" },
-        
-        ]
+        */
+  ];
 
-    let carrito = [];
-    const divisa = '$';
-    const DOMitems = document.querySelector('#items');
-    const DOMcarrito = document.querySelector('#carrito');
-    const DOMtotal = document.querySelector('#total');
-    const DOMbotonVaciar = document.querySelector('#boton-vaciar');
-    const miLocalStorage = window.localStorage;
+  let carrito = [];
+  const divisa = "$";
+  const DOMitems = document.querySelector("#items");
+  const DOMcarrito = document.querySelector("#carrito");
+  const DOMtotal = document.querySelector("#total");
+  const DOMbotonVaciar = document.querySelector("#boton-vaciar");
+  const miLocalStorage = window.localStorage;
 
+  function dibujarProductos() {
+    misProductos.forEach((info) => {
+      const miNodo = document.createElement("div");
+      miNodo.classList.add("card", "col-sm-4");
+      const miNodoCardBody = document.createElement("div");
+      miNodoCardBody.classList.add("card-body");
+      const miNodoTitle = document.createElement("h5");
+      miNodoTitle.classList.add("card-title");
+      miNodoTitle.textContent = info.nombre;
+      const miNodoImagen = document.createElement("img");
+      miNodoImagen.classList.add("img-fluid");
+      miNodoImagen.setAttribute("src", info.imagen);
+      const miNodoPrecio = document.createElement("p");
+      miNodoPrecio.classList.add("card-text");
+      miNodoPrecio.textContent = `${info.precio}${divisa}`;
+      const miNodoBoton = document.createElement("button");
+      miNodoBoton.classList.add("btn", "btn-primary");
+      miNodoBoton.textContent = "+";
+      miNodoBoton.setAttribute("marcador", info.id);
+      miNodoBoton.addEventListener("click", añadirProductoAlCarrito);
+      miNodoCardBody.appendChild(miNodoImagen);
+      miNodoCardBody.appendChild(miNodoTitle);
+      miNodoCardBody.appendChild(miNodoPrecio);
+      miNodoCardBody.appendChild(miNodoBoton);
+      miNodo.appendChild(miNodoCardBody);
+      DOMitems.appendChild(miNodo);
+    });
+  }
 
-
-    function dibujarProductos() {
+  function renderizarProductos() {
+    fetch("./data.json")
+      .then((res) => {
+        return res.json();
+      })
+      .then((productos) => {
         productos.forEach((info) => {
-            const miNodo = document.createElement('div');
-            miNodo.classList.add('card', 'col-sm-4');
-            const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('card-body');
-            const miNodoTitle = document.createElement('h5');
-            miNodoTitle.classList.add('card-title');
+            const miNodo = document.createElement("div");
+            miNodo.classList.add("card", "col-sm-4");
+            const miNodoCardBody = document.createElement("div");
+            miNodoCardBody.classList.add("card-body");
+            const miNodoTitle = document.createElement("h5");
+            miNodoTitle.classList.add("card-title");
             miNodoTitle.textContent = info.nombre;
-            const miNodoImagen = document.createElement('img');
-            miNodoImagen.classList.add('img-fluid');
-            miNodoImagen.setAttribute('src', info.imagen);
-            const miNodoPrecio = document.createElement('p');
-            miNodoPrecio.classList.add('card-text');
+            const miNodoImagen = document.createElement("img");
+            miNodoImagen.classList.add("img-fluid");
+            miNodoImagen.setAttribute("src", info.imagen);
+            const miNodoPrecio = document.createElement("p");
+            miNodoPrecio.classList.add("card-text");
             miNodoPrecio.textContent = `${info.precio}${divisa}`;
-            const miNodoBoton = document.createElement('button');
-            miNodoBoton.classList.add('btn', 'btn-primary');
-            miNodoBoton.textContent = '+';
-            miNodoBoton.setAttribute('marcador', info.id);
-            miNodoBoton.addEventListener('click', añadirProductoAlCarrito);
+            const miNodoBoton = document.createElement("button");
+            miNodoBoton.classList.add("btn", "btn-primary");
+            miNodoBoton.textContent = "agregar";
+            miNodoBoton.setAttribute("marcador", info.id);
+            miNodoBoton.addEventListener("click", añadirProductoAlCarrito);
             miNodoCardBody.appendChild(miNodoImagen);
             miNodoCardBody.appendChild(miNodoTitle);
             miNodoCardBody.appendChild(miNodoPrecio);
             miNodoCardBody.appendChild(miNodoBoton);
             miNodo.appendChild(miNodoCardBody);
             DOMitems.appendChild(miNodo);
+            misProductos=productos;
         });
-    }
+      });
+  }
+  renderizarProductos()
 
-    function añadirProductoAlCarrito(evento) {
-        carrito.push(evento.target.getAttribute('marcador'))
-        dibujarCarrito();
-        guardarCarritoEnLocalStorage();
 
-    }
-
-    function dibujarCarrito() {
-        DOMcarrito.textContent = '';
-        const carritoSinDuplicados = [...new Set(carrito)];
-        carritoSinDuplicados.forEach((item) => {
-            const miItem = productos.filter((itemProductos) => {
-                return itemProductos.id === parseInt(item);
-            });
-            const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-                return itemId === item ? total += 1 : total;
-            }, 0);
-            const miNodo = document.createElement('li');
-            miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-            miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
-            const miBoton = document.createElement('button');
-            miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-            miBoton.textContent = 'X';
-            miBoton.style.marginLeft = '1rem';
-            miBoton.dataset.item = item;
-            miBoton.addEventListener('click', borrarItemCarrito);
-            miNodo.appendChild(miBoton);
-            DOMcarrito.appendChild(miNodo);
-        });
-       DOMtotal.textContent = calcularTotal();
-    }
-
-    function borrarItemCarrito(evento) {
-        const id = evento.target.dataset.item;
-        carrito = carrito.filter((carritoId) => {
-            return carritoId !== id;
-        });
-        dibujarCarrito();
-        guardarCarritoEnLocalStorage();
-    }
-
-    function calcularTotal() { 
-        return carrito.reduce((total, item) => {
-            const miItem = productos.filter((itemProductos) => {
-                return itemProductos.id === parseInt(item);
-            });
-            return total + miItem[0].precio;
-        }, 0).toFixed(2);
-    }
-
-    function vaciarCarrito() {
-        carrito = [];
-        dibujarCarrito();
-        localStorage.clear();
-    }
-
-    function guardarCarritoEnLocalStorage () {
-        miLocalStorage.setItem('carrito', JSON.stringify(carrito));
-    }
-
-    function cargarCarritoDeLocalStorage () {
-        if (miLocalStorage.getItem('carrito') !== null) {
-            carrito = JSON.parse(miLocalStorage.getItem('carrito'));
-        }
-    }
-
-    DOMbotonVaciar.addEventListener('click', vaciarCarrito);
-
-    cargarCarritoDeLocalStorage();
-    dibujarProductos();
+  function añadirProductoAlCarrito(evento) {
+    carrito.push(evento.target.getAttribute("marcador"));
     dibujarCarrito();
-  });
+    guardarCarritoEnLocalStorage();
+  }
 
-  const btn = document.querySelector('#myBtn')
-  btn.addEventListener('click', () => {
-  
-      Swal.fire({
-          title: 'Macskateshop',
-          text: 'Somos un skateshop 100% uruguayo con productos de calidad',
-          icon: 'success',
-          confirmButtonText: 'Gracias por formar parte'
-  })
-  })
-  
-  
+  function dibujarCarrito() {
+    DOMcarrito.textContent = "";
+    const carritoSinDuplicados = [...new Set(carrito)];
+    carritoSinDuplicados.forEach((item) => {
+      const miItem = misProductos.filter((itemProductos) => {
+        return itemProductos.id === parseInt(item);
+      });
+      const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+        return itemId === item ? (total += 1) : total;
+      }, 0);
+      const miNodo = document.createElement("li");
+      miNodo.classList.add("list-group-item", "text-right", "mx-2");
+      miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+      const miBoton = document.createElement("button");
+      miBoton.classList.add("btn", "btn-danger", "mx-5");
+      miBoton.textContent = "X";
+      miBoton.style.marginLeft = "1rem";
+      miBoton.dataset.item = item;
+      miBoton.addEventListener("click", borrarItemCarrito);
+      miNodo.appendChild(miBoton);
+      DOMcarrito.appendChild(miNodo);
+    });
+    DOMtotal.textContent = calcularTotal();
+  }
+
+  function borrarItemCarrito(evento) {
+    const id = evento.target.dataset.item;
+    carrito = carrito.filter((carritoId) => {
+      return carritoId !== id;
+    });
+    dibujarCarrito();
+    guardarCarritoEnLocalStorage();
+  }
+
+  function calcularTotal() {
+    return carrito
+      .reduce((total, item) => {
+        const miItem = misProductos.filter((itemProductos) => {
+          return itemProductos.id === parseInt(item);
+        });
+        return total + miItem[0].precio;
+      }, 0)
+      .toFixed(2);
+  }
+
+  function vaciarCarrito() {
+    carrito = [];
+    dibujarCarrito();
+    localStorage.clear();
+  }
+
+  function guardarCarritoEnLocalStorage() {
+    miLocalStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+
+  function cargarCarritoDeLocalStorage() {
+    if (miLocalStorage.getItem("carrito") !== null) {
+      carrito = JSON.parse(miLocalStorage.getItem("carrito"));
+    }
+  }
+
+  DOMbotonVaciar.addEventListener("click", vaciarCarrito);
+
+  cargarCarritoDeLocalStorage();
+  dibujarProductos();
+  dibujarCarrito();
+});
+
+
+const btn = document.querySelector("#myBtn");
+btn.addEventListener("click", () => {
+  Swal.fire({
+    title: "Macskateshop",
+    text: "Somos un skateshop 100% uruguayo con productos de calidad",
+    icon: "success",
+    confirmButtonText: "Gracias por formar parte",
+  });
+});
+
+
+let btnCarrito = document.getElementById("btnCarrito")
+let imgCarrito = document.getElementById("imgCarrito");
+let listaCarrito = document.getElementById("listaCarrito");
+
+btnCarrito.addEventListener("click", ()=>{
+    if(listaCarrito.className == "carritoAnimation"){
+        imgCarrito.src = "./assets/img/carrito.png";
+        listaCarrito.className = "carritoAnimationSalir";
+    }else{
+        imgCarrito.src = "./assets/img/carritoX.png";
+        listaCarrito.className = "carritoAnimation";
+    }
+    
+});
+
+/*
   const lista = document.querySelector("#listado")
 
-  fetch("../data.json")
+  fetch("./assets/JS/data.jason")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((producto)=>{
@@ -246,3 +295,4 @@ document.addEventListener('DOMContentLoaded', () => {
         lista.append(li)
     })
   })
+*/

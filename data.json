@@ -1,0 +1,32 @@
+[
+    { "id": 1, 
+    "nombre":"Maple-PISCIS", 
+    "precio": 2500, 
+    "imagen": "./assets/img/piscis.webp"},
+    
+    { "id": 2, 
+    "nombre":"Maple-SAUCE",
+    "precio": 2500, 
+    "imagen":"./assets/img/sauce.webp"},
+    
+    { "id": 3, 
+    "nombre": "Maple-BJJ",
+    "precio": 2500,
+    "imagen": "./assets/img/bjj.jpeg"},
+    
+    { "id": 4, 
+    "nombre": "Guatambu-PISCIS", 
+    "precio": 2500,
+    "imagen": "./assets/img/gua piscids.webp"},
+    
+    { "id": 5, 
+    "nombre": "Guatambu-SAUCE", 
+    "precio": 2500,
+    "imagen": "./assets/img/gua saUCE.webp"},
+    
+    { "id": 6, 
+    "nombre": "Guatambu-BJJ", 
+    "precio": 2500,
+    "imagen": "./assets/img/gua bjj.jpeg" }
+    
+    ]
